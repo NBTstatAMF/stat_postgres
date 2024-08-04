@@ -104,4 +104,5 @@ CREATE TABLE sma_stat_dep.tbl_attr_values(
   a_value JSONB 
 );
 
+
 CREATE INDEX idxgin_a_values ON sma_stat_dep.tbl_attr_values USING GIN (a_value);

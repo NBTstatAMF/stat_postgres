@@ -99,6 +99,7 @@ CREATE TABLE sma_stat_dep.tbl_ent(
 
 CREATE TABLE sma_stat_dep.tbl_attr_values(
   id SERIAL PRIMARY KEY,
+  ent_id INT REFERENCES sma_stat_dep.tbl_ent(id),
   schedule_id INT REFERENCES sma_stat_dep.tbl_schedule(id),
   tstp TIMESTAMP,
   a_value JSONB 

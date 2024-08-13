@@ -89,3 +89,21 @@ CREATE TABLE sma_stat_dep.tbl_version(
   code VARCHAR(100) UNIQUE,
   name VARCHAR(100)
 );
+
+CREATE TABLE sma_stat_dep.tbl_ent(
+  id SERIAL PRIMARY KEY,
+  code VARCHAR(100) UNIQUE,
+  name VARCHAR(100),
+  tstp TIMESTAMP
+);
+
+CREATE TABLE sma_stat_dep.tbl_attr_values(
+  id SERIAL PRIMARY KEY,
+  ent_id INT REFERENCES sma_stat_dep.tbl_ent(id),
+  schedule_id INT REFERENCES sma_stat_dep.tbl_schedule(id),
+  tstp TIMESTAMP,
+  a_value JSONB 
+);
+
+
+CREATE INDEX idxgin_a_values ON sma_stat_dep.tbl_attr_values USING GIN (a_value);

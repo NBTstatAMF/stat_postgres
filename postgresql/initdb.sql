@@ -108,7 +108,8 @@ CREATE TABLE sma_stat_dep.tbl_attr_values(
 CREATE TABLE sma_stat_dep.tbl_file_per_schedule(
   id SERIAL PRIMARY KEY,
   schedule_id INT REFERENCES sma_stat_dep.tbl_schedule(id),
-  file_id INT REFERENCES sma_stat_dep.tbl_files(id)
+  file_id INT REFERENCES sma_stat_dep.tbl_files(id),
+  UNIQUE (schedule_id, file_id)
 );
 
 

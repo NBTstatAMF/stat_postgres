@@ -101,7 +101,6 @@ CREATE TABLE sma_stat_dep.tbl_attr_values(
   id SERIAL PRIMARY KEY,
   ent_id INT REFERENCES sma_stat_dep.tbl_ent(id),
   file_per_schedule_id INT REFERENCES sma_stat_dep.tbl_file_per_schedule(id),
-  tstp TIMESTAMP,
   a_value JSONB 
 );
 

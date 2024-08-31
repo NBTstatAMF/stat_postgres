@@ -97,13 +97,6 @@ CREATE TABLE sma_stat_dep.tbl_ent(
   tstp TIMESTAMP
 );
 
-CREATE TABLE sma_stat_dep.tbl_attr_values(
-  id SERIAL PRIMARY KEY,
-  ent_id INT REFERENCES sma_stat_dep.tbl_ent(id),
-  file_per_schedule_id INT REFERENCES sma_stat_dep.tbl_file_per_schedule(id),
-  a_value JSONB 
-);
-
 CREATE TABLE sma_stat_dep.tbl_file_per_schedule(
   id SERIAL PRIMARY KEY,
   schedule_id INT REFERENCES sma_stat_dep.tbl_schedule(id),
@@ -111,5 +104,11 @@ CREATE TABLE sma_stat_dep.tbl_file_per_schedule(
   UNIQUE (schedule_id, file_id)
 );
 
+CREATE TABLE sma_stat_dep.tbl_attr_values(
+  id SERIAL PRIMARY KEY,
+  ent_id INT REFERENCES sma_stat_dep.tbl_ent(id),
+  file_per_schedule_id INT REFERENCES sma_stat_dep.tbl_file_per_schedule(id),
+  a_value JSONB 
+);
 
 CREATE INDEX idxgin_a_values ON sma_stat_dep.tbl_attr_values USING GIN (a_value);

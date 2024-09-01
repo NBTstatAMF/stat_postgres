@@ -97,6 +97,13 @@ CREATE TABLE sma_stat_dep.tbl_ent(
   tstp TIMESTAMP
 );
 
+CREATE TABLE sma_stat_dep.tbl_ent(
+  id SERIAL PRIMARY KEY,
+  code VARCHAR(100) UNIQUE,
+  name VARCHAR(100),
+  tstp TIMESTAMP
+);
+
 CREATE TABLE sma_stat_dep.tbl_file_per_schedule(
   id SERIAL PRIMARY KEY,
   schedule_id INT REFERENCES sma_stat_dep.tbl_schedule(id),

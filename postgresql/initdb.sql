@@ -97,11 +97,12 @@ CREATE TABLE sma_stat_dep.tbl_ent(
   tstp TIMESTAMP
 );
 
-CREATE TABLE sma_stat_dep.tbl_ent(
+CREATE TABLE sma_stat_dep.tbl_attrs(
   id SERIAL PRIMARY KEY,
   code VARCHAR(100) UNIQUE,
   name VARCHAR(100),
-  tstp TIMESTAMP
+  tstp TIMESTAMP,
+  properties JSONB
 );
 
 CREATE TABLE sma_stat_dep.tbl_file_per_schedule(

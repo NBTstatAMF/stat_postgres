@@ -52,7 +52,8 @@ CREATE TABLE sma_stat_dep.tbl_report_type(
   name VARCHAR(100),
   validation_config VARCHAR, 
   report_period_type INT NOT NULL,
-  UNIQUE (code, version, report_period_type)
+  UNIQUE (code, version, report_period_type),
+  submition_mode INT NOT NULL
 );
 
 -- status's options: [0: disabled, 1: enaled]

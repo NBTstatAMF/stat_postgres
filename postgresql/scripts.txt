@@ -1,3 +1,13 @@
 sudo docker exec -it postgresql-postgres_omor-1 psql -U docker -d db_stat_dep -W
 sudo docker compose down --volumes --remove-orphans
 docker compose up airflow-init
+
+
+# turn off all wsl instances such as docker-desktop
+wsl --shutdown
+notepad "$env:USERPROFILE/.wslconfig"
+
+# Set the values you want for CPU core and Memory:
+[wsl2]
+memory=3GB   # Limits VM memory in WSL 2 up to 3GB
+processors=2 # Makes the WSL 2 VM use two virtual processors

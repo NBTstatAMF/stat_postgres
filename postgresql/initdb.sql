@@ -45,6 +45,7 @@ CREATE TABLE sma_stat_dep.tbl_schedule(
   UNIQUE (report_type_id, bank_id, period_id, version_id)
 );
 
+-- status's options: [0: reporting window, 1: single-submission mode]
 CREATE TABLE sma_stat_dep.tbl_report_type(
   id SERIAL PRIMARY KEY,
   code VARCHAR(100),

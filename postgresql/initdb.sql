@@ -115,7 +115,7 @@ CREATE TABLE sma_stat_dep.tbl_file_per_schedule(
 );
 
 CREATE TABLE sma_stat_dep.tbl_attr_values(
-  id SERIAL PRIMARY KEY,
+  id BIGSERIAL PRIMARY KEY,
   ent_id INT REFERENCES sma_stat_dep.tbl_ent(id),
   file_per_schedule_id INT REFERENCES sma_stat_dep.tbl_file_per_schedule(id),
   a_value JSONB 

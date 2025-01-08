@@ -99,6 +99,14 @@ CREATE TABLE sma_stat_dep.tbl_ent(
   tstp TIMESTAMP
 );
 
+CREATE TABLE sma_stat_dep.tbl_fx_rates(
+  id SERIAL PRIMARY KEY,
+  index VARCHAR(10),  
+  batch_size INT,
+  rate REAL, 
+  id_date_currency VARCHAR(20) UNIQUE
+  );
+
 CREATE TABLE sma_stat_dep.tbl_attrs(
   id BIGSERIAL PRIMARY KEY,
   code VARCHAR(100) UNIQUE,
